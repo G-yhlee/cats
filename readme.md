@@ -1,10 +1,10 @@
-- [pure] `참조투명성, 순수함수, 부수효과`
+- [purity] `참조투명성, 순수함수, 부수효과`
 - [monoid]
 - [functor]
 - [monad]
 
-[monoid]: /_/monoid.md
 [purity]: /_/purity.md
+[monoid]: /_/monoid.md
 [functor]: /_/functor.md.md
 [monad]: /_/monad.md.md
 
