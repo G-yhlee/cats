@@ -5,8 +5,8 @@
 
 [purity]: /_/purity.md
 [monoid]: /_/monoid.md
-[functor]: /_/functor.md.md
-[monad]: /_/monad.md.md
+[functor]: /_/functor.md
+[monad]: /_/monad.md
 
 #### reference.
 
