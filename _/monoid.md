@@ -1,7 +1,11 @@
+#### 요약
+
 - set : set{}
 - magma : set{이항연산}
 - Semigroup : set{이항연산 when 결합법칙}
 - monoid : set{이항연산 when 결합법칙,항등원 }
+
+#### 예시
 
 ```scala
 trait Monoid[A]{
@@ -51,3 +55,7 @@ op(1, op(2, op(3, 4))) // foldRight
 op(op(1, 2), op(3, 4)) // 병렬 연산
 
 ```
+
+#### 참고
+
+https://kpug.github.io/fp-gitbook/Chapter3.html
