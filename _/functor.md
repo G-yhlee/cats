@@ -138,3 +138,4 @@ val unZip = list.unzip
 #### 참고
 
 https://kpug.github.io/fp-gitbook/Chapter4.html
+https://www.tutorialspoint.com/haskell/haskell_functor.htm
