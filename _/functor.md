@@ -1,27 +1,26 @@
 #### functor
 
-- fmap = 일반화된 map
+- list [] of map = map
+- functor f of map = fmap
 
 ```haskell
-fmap :: Functor f => (a -> b) -> f a -> f b
-map :: (a -> b) -> [a] -> [b]
+fmap :: Functor f => (a -> b) -> f a -> f b -- functor f of map
+map :: (a -> b) -> [a] -> [b] -- list [] of map
 ```
 
 #### functor 와 map 차이
 
-- 이렇게 봤을땐 같아보인다. 그렇다면 다른점은 무엇인가?
+- map 은 list 를 대상으로 하기때문에 , list 에만 적용가능
+- fmap 은 list 를 포함한 다른 functor 모두를 대상으로 하기 때문에, 모두 적용가능
 
 ```haskell
 main = do
+
+  -- map
    print(map (subtract 1) [2,4,8,16]) -- [1,3,7,15]
+
+  -- fmap
    print(fmap (subtract 1) [2,4,8,16]) -- [1,3,7,15]
-
-```
-
-- 다음과 같이, 좀더 제너럴한 상황에서 fmap을 사용할수있다.
-
-```haskell
-main = do
    print (fmap  (+7)(Just 10)) -- Just 17
    print (fmap  (+7) Nothing) -- Nothing
 
@@ -71,19 +70,6 @@ sealed trait LinkedList[A] {
 }
 final case class Pair[A](head: A, tail: LinkedList[A]) extends LinkedList[A]
 final case class End[A]() extends LinkedList[A]
-```
-
-#### pure
-
-```js
-const f = [1, 2, 3];
-f.map((x) => x); //[1, 2, 3]
-```
-
-#### compose
-
-```js
-Functor.map((x) => f(g(x))) === Functor.map(g).map(f);
 ```
 
 #### endofunctors
