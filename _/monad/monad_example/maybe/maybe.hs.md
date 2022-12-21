@@ -8,17 +8,7 @@ class Monad m where
     return :: a -> m a
 ```
 
-- 모나드 클래스로 생성한 maybe 모나드
-
-```hs
-instance Monad Maybe where
-    Nothing  >>= f = Nothing
-    (Just x) >>= f = f x
-    return         = Just
-
-```
-
-- 다른 방식으로 작성한 maybe 모나드
+- maybe 모나드
 
 ```hs
 return :: a -> Maybe a
@@ -28,6 +18,16 @@ return x  = Just x
 m >>= g = case m of
              Nothing -> Nothing
              Just x  -> g x
+```
+
+- 모나드 클래스로 생성한 maybe 모나드
+
+```hs
+instance Monad Maybe where
+    Nothing  >>= f = Nothing
+    (Just x) >>= f = f x
+    return         = Just
+
 ```
 
 #### maybe monad example
