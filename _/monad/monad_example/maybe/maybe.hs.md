@@ -1,10 +1,14 @@
 #### maybe in haskell
 
+- 모나드 클래스
+
 ```hs
 class Monad m where
     (>>=)  :: m a -> (a -> m b) -> m b
     return :: a -> m a
 ```
+
+- 모나드 클래스로 생성한 maybe 모나드
 
 ```hs
 instance Monad Maybe where
@@ -13,6 +17,8 @@ instance Monad Maybe where
     return         = Just
 
 ```
+
+- 다른 방식으로 작성한 maybe 모나드
 
 ```hs
 return :: a -> Maybe a
