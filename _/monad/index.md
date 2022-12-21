@@ -1,6 +1,4 @@
-#### 모나드란
-
-- a monad is "an endofunctor"
+#### index
 
 #### ref.
 

@@ -1,0 +1,7 @@
+#### monad law
+
+```hs
+(return x) >>= f ==== f x
+m >>= return ==== m
+(m >>= f) >>= g ==== m >>= (\x -> f x >>= g)
+```
