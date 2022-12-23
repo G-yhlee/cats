@@ -73,3 +73,15 @@ mothersPaternalGrandfather s = mother s >>= (\m ->
                                father m >>= (\gf ->
                                father gf))
 ```
+
+#### notions of computation
+
+```hs
+bothGrandfathers p = do {
+    dad <- father p;
+    gf1 <- father dad;
+    mom <- mother p;
+    gf2 <- father mom;
+    return (gf1, gf2);
+  }
+```
