@@ -1,3 +1,16 @@
+####
+
+```hs
+class Num a where
+  (+) :: a -> a -> a
+  (-) :: a -> a -> a
+  (*) :: a -> a -> a
+  negate :: a -> a
+  abs :: a -> a
+  signum :: a -> a
+  fromInteger :: Integer -> a
+```
+
 ```haskell
 (==) :: (Eq a) => a -> a -> Bool
 -- Eq 클래스의 타입인 두 a 를 받아서 , Bool 을 리턴한다

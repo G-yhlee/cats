@@ -4,6 +4,7 @@
 - magma : set{이항연산}
 - Semigroup : set{이항연산 when 결합법칙}
 - monoid : set{이항연산 when 결합법칙,항등원 }
+- group : set{이항연산 when 결합법칙,항등원,역원 }
 
 #### 예시
 
