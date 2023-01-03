@@ -1,5 +1,46 @@
 #### 기본형
 
+-
+
+```scala
+trait Printer[A] {
+  def print(a: A): String
+}
+object Printer {
+  def apply[A](implicit p: Printer[A]): Printer[A] = summon[Printer[A]]
+}
+implicit val intPrinter: Printer[Int] = new Printer[Int] {
+  def print(i: Int): String = s"int $i"
+}
+implicit val stringPrinter: Printer[String] = new Printer[String] {
+  def print(s: String): String = s"string $s"
+}
+implicit class PrinterOps[A](val a: A) extends AnyVal {
+  def print(implicit p: Printer[A]): String = p.print(a)
+}
+
+object Hello {
+
+  def main(args: Array[String]): Unit = {
+    import Printer._
+    println(Printer[Int].print(100))
+    println(Printer[String].print("100"))
+    println(Printer[(String,Int)].print(("100",100)))
+    println(new PrinterOps(100).print)
+    println(new PrinterOps("100").print)
+    println(new PrinterOps(("100",100)).print)a
+    println(100.print)aaaa
+    println("100".print)
+    println(("100",100).print)
+  }
+}
+
+
+
+```
+
+#### 기본형
+
 ```scala
 trait Printer[A]{
   def print(a: A): String
@@ -94,7 +135,7 @@ object Printer {
 //   def apply[A](using p: Printer[A]): Printer[A] = p
 //   def apply[A](using p: Printer[A]): Printer[A] = implicitly[Printer[A]]
 //   def apply[A](using p: Printer[A]): Printer[A] = sommon[Printer[A]]
-  def apply[A](using p: Printer[A]): Printer[A] = sommon
+  def apply[A](using p: Printer[A]): Printer[A] = summon
 
   given Printer[Int] = (i: Int)=>s"int $i"
 
